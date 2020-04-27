@@ -1,6 +1,17 @@
 <html>
 <head>
 <title>Snapin test page</title>
+	<style type="text/css">
+<!--
+h1	{text-align:center;
+	font-family:Arial, Helvetica, Sans-Serif;
+	font-size: 1em;
+	}
+
+p	{text-indent:20px;
+	}
+-->
+</style>
 </head>
 <style type='text/css'>
 	.embeddedServiceHelpButton .helpButton .uiButton {
@@ -14,8 +25,7 @@
 	}
 	
 	.embeddedServiceSidebarState.stateBody .h1 {
-		font-weight: bold;
-		font-size: 1em;
+		font-weight: inherit;
 	}
 	.embeddedServiceSidebarState.stateBody .slds-button {
 	    position: relative;
@@ -49,7 +59,7 @@
 	    transition: border 0.15s linear 0s;
 	    border-color: rgb(255, 206, 51);
 	}
-	.slds-button_neutral, .slds-button--neutral {
+	.embeddedServiceSidebarState.stateBody .slds-button_neutral, .slds-button--neutral {
 	    padding-left: 1rem;
 	    padding-right: 1rem;
 	    text-align: center;
@@ -61,6 +71,23 @@
 	    border-image: initial;
 	    transition: border 0.15s linear 0s;
 	    border-color: rgb(212, 212, 212);
+	}
+	
+	.embeddedServiceSidebarState.stateBody .slds-button_icon, .slds-button--icon, .slds-button_icon-inverse, .slds-button--icon-inverse, .slds-button_icon-container, .slds-button--icon-container, .slds-button_icon-border, .slds-button--icon-border, .slds-button_icon-border-filled, .slds-button--icon-border-filled, .slds-button_icon-border-inverse, .slds-button--icon-border-inverse, .slds-button_icon-more, .slds-button--icon-more, .slds-button_icon-error, .slds-button--icon-error {
+	    line-height: 1;
+	    vertical-align: middle;
+	    justify-content: center;
+	    color: rgb(107, 109, 112);
+	    flex-shrink: 0;
+	}
+	.embeddedServiceSidebarState.stateBody .slds-button__icon {
+	    width: 0.875rem;
+	    height: 0.875rem;
+	    fill: currentcolor;
+	}
+	.embeddedServiceSidebarState.stateBody .slds-button__icon_large, .slds-button__icon--large {
+	    width: 1.5rem;
+	    height: 1.5rem;
 	}
 </style>
 <script type='text/javascript' src='https://service.force.com/embeddedservice/5.0/esw.min.js'></script>
