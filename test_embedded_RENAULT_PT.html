@@ -52,7 +52,7 @@ p	{text-indent:20px;
 	    text-align: center;
 	    vertical-align: middle;
 	    justify-content: center;
-	    background-color: rgb(255, 206, 206);
+	    background-color: rgb(255, 206, 51);
 	    color: rgb(5, 5, 5);
 	    border-width: 1px;
 	    border-style: solid;
@@ -71,7 +71,7 @@ p	{text-indent:20px;
 	    border-style: solid;
 	    border-image: initial;
 	    transition: border 0.15s linear 0s;
-	    border-color: rgb(255, 206, 206);
+	    border-color: rgb(255, 206, 51);
 	}
 	
 	.embeddedServiceSidebarState.stateBody .slds-button_icon, .slds-button--icon, .slds-button_icon-inverse, .slds-button--icon-inverse, .slds-button_icon-container, .slds-button--icon-container, .slds-button_icon-border, .slds-button--icon-border, .slds-button_icon-border-filled, .slds-button--icon-border-filled, .slds-button_icon-border-inverse, .slds-button--icon-border-inverse, .slds-button_icon-more, .slds-button--icon-more, .slds-button_icon-error, .slds-button--icon-error {
@@ -113,6 +113,32 @@ p	{text-indent:20px;
 	  background-color: white;
 	  -webkit-box-shadow: 0 0 3px #0070d2;
 	  box-shadow: 0 0 3px #0070d2;
+	}
+	.embeddedServiceSidebarState.stateBody .slds-grid {
+	    display: flex;
+	}
+	.embeddedServiceSidebarState.stateBody .slds-wrap {
+	    flex-wrap: wrap;
+	    align-items: flex-start;
+	}
+	.embeddedServiceSidebarState.stateBody .slds-col, [class*="slds-col_padded"], [class*="slds-col--padded"] {
+	    flex: 1 1 auto;
+	}
+	.embeddedServiceSidebarState.stateBody .slds-col_bump-right, .slds-col--bump-right {
+	    margin-right: auto;
+	}
+	.embeddedServiceSidebarState.stateBody .slds-grow-none {
+	    flex-grow: 0;
+	}
+	.embeddedServiceSidebarState.stateBody .slds-m-around_xx-small, .slds-m-around--xx-small {
+	    margin: 0.25rem;
+	}
+	.embeddedServiceSidebarState.stateBody .slds-align_absolute-center, .slds-align--absolute-center {
+	    display: flex;
+	    justify-content: center;
+	    align-content: center;
+	    align-items: center;
+	    margin: auto;
 	}
 </style>
 <script type='text/javascript' src='https://service.force.com/embeddedservice/5.0/esw.min.js'></script>
