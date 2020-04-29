@@ -3,13 +3,38 @@
 <title>Snapin RENAULT test page</title>
 </head>
 <style type='text/css'>
- html{
-  font-family: "readBeta2 sans-serif";
- }
- body{
-  margin:0;
-  line-height: 1.45;
-  direction: ltr;
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    font-size: 1.2rem;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    font-family: "readBeta2 sans-serif";
+    line-height: 1.45;
+    direction: ltr;
+    overflow-x: hidden;
+}
+.Button_primary:not(:disabled):not(.is-disabled) {
+    color: #000;
+    background: linear-gradient(90deg,#ffda66 50%,#ffce33 0);
+    background-size: 200% 100%;
+    background-position: 100% 100%;
+    transition: background-position .3s;
+}
+	
+.Button {
+    padding: 16px;
+    padding-top: 16px;
+    padding-right: 16px;
+    padding-bottom: 16px;
+    padding-left: 16px;
+    font-size: 1.4rem;
+    text-transform: uppercase;
+}
+	
+h1 {
+    text-transform: uppercase;
 }	
 .embeddedServiceSidebarState.stateBody h1{
   text-transform: uppercase;
@@ -79,6 +104,9 @@ background-color:#ffce33;
 hover/active
 background: linear-gradient(90deg,#ffda66 50%,#ffce33 0);	
 </p>
+
+<div class="Button Button_primary">BOUTON TEST DESIGN</div>
+	
 <div class="embeddedServiceHelpButton"></div>
 
 </body>
