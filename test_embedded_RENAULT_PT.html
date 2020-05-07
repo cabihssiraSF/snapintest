@@ -55,7 +55,8 @@ h1 {
 </style>
 <script type='text/javascript' src='https://service.force.com/embeddedservice/5.0/esw.min.js'></script>
 <script type='text/javascript'>
-	document.addEventListener("rchat_leavemessage", displayDate);
+	const stateBody = document.getElementsByClassName("stateBody");
+	stateBody.addEventListener("rchat_leavemessage", displayDate);
 
 	function displayDate() {
 	  document.getElementById("demo").innerHTML = Date();
