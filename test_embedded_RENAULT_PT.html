@@ -92,6 +92,15 @@ h1 {
 	} else {
 		initESW('https://service.force.com');
 	}
+	document.addEventListener( "setCustomField", 
+				  function(event) { 
+					console.log(event.detail.dealerbirid);
+					embedded_svc.settings.extraPrechatFormDetails[0].value = 'PT'; 
+					embedded_svc.settings.extraPrechatFormDetails[1].value = 'RENAULT'; 
+					embedded_svc.settings.extraPrechatFormDetails[2].value = event.detail.dealerbirid; 
+					// Fire startChat callback. 
+					event.detail.callback(); 
+					}, false );
 </script>
 <body>
 <h1>Chat Branded Test page</h1>
