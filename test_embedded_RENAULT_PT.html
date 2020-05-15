@@ -65,6 +65,16 @@ h1 {
 								 {"label":"Brand", "transcriptFields": ["Brand__c"]},
 								 {"label":"DealerBIRId", "transcriptFields": ["DealerBIRId__c"]}];
 
+		document.addEventListener( "setCustomField", 
+				  function(event) { 
+					console.log(event.detail.dealerbirid);
+					embedded_svc.settings.extraPrechatFormDetails[0].value = event.detail.country; 
+					embedded_svc.settings.extraPrechatFormDetails[1].value = event.detail.brand; 
+					embedded_svc.settings.extraPrechatFormDetails[2].value = event.detail.dealerbirid; 
+					// Fire startChat callback. 
+					event.detail.callback(); 
+					}, false );
+		
 		embedded_svc.init(
 			'https://r-chat--dev.my.salesforce.com',
 			'https://dev-r-chat.cs128.force.com/',
@@ -92,15 +102,6 @@ h1 {
 	} else {
 		initESW('https://service.force.com');
 	}
-	document.addEventListener( "setCustomField", 
-				  function(event) { 
-					console.log(event.detail.dealerbirid);
-					embedded_svc.settings.extraPrechatFormDetails[0].value = 'PT'; 
-					embedded_svc.settings.extraPrechatFormDetails[1].value = 'RENAULT'; 
-					embedded_svc.settings.extraPrechatFormDetails[2].value = event.detail.dealerbirid; 
-					// Fire startChat callback. 
-					event.detail.callback(); 
-					}, false );
 </script>
 <body>
 <h1>Chat Branded Test page</h1>
