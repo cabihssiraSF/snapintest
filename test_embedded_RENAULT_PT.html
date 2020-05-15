@@ -67,7 +67,7 @@ h1 {
 
 		document.addEventListener( "setCustomField", 
 				  function(event) { 
-					console.log(event.detail.dealerbirid);
+					console.log(event.detail.country + '_' + event.detail.dealerbirid + '_' + event.detail.brand );
 					embedded_svc.settings.extraPrechatFormDetails[0].value = event.detail.country; 
 					embedded_svc.settings.extraPrechatFormDetails[1].value = event.detail.brand; 
 					embedded_svc.settings.extraPrechatFormDetails[2].value = event.detail.dealerbirid; 
