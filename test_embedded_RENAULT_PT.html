@@ -61,6 +61,9 @@ h1 {
 
 		embedded_svc.settings.enabledFeatures = ['LiveAgent'];
 		embedded_svc.settings.entryFeature = 'LiveAgent';
+		embedded_svc.settings.extraPrechatFormDetails = [{"label":"Country", "transcriptFields": ["Country__c"]},
+								 {"label":"Brand", "transcriptFields": ["Brand__c"]},
+								 {"label":"DealerBIRId", "transcriptFields": ["DealerBIRId__c"]}];
 
 		embedded_svc.init(
 			'https://r-chat--dev.my.salesforce.com',
