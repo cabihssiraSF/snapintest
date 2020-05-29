@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<body>
+<!--script src="https://poc-frameout.cs129.force.com/s/lightning/lightning.out.js"></script-->
+<h2>HTML Iframe</h2>
+<p>Page publique, mais ajout d'un id de session en paramètre. LE message envoyé peut prendre n'importe quelle forme</p>
+<button onclick="sendparameters()">Envoi des parmètres</button>
+<br/>
+<iframe id="iframe" src="https://albiantit--poc.lightning.force.com/c/goccTimelineApp.app" height="600" width="100%"></iframe>
+
+<script>
+     
+    var lexOrigin = '*';
+     
+    function sendparameters() {
+        var message = {
+        	session: "1vO3YeeIlejo7VELPzUYetJ3Ovvpl9AA7sLIQyUEvBM.0N8wJYFjJ-tNyMTROxq4lg",
+            site: "Etablissement",
+            poste: "Poste",
+            persons: "[Id1,Id2,Id3]"
+        };
+        console.log('postMessage to iframe');
+        iframe.contentWindow.postMessage(message, lexOrigin);
+    }
+     
+</script>
+
+</body>
+</html>
