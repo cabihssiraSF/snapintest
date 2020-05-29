@@ -1,11 +1,30 @@
 <!DOCTYPE html>
 <html>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 <body>
 <!--script src="https://poc-frameout.cs129.force.com/s/lightning/lightning.out.js"></script-->
-<h2>HTML Iframes</h2>
-<p>You can use the height and width attributes to specify the size of the iframe:</p>
+<h2>HTML Iframe</h2>
+    <p>Pour afficher les données de :</p>
+    <p>1/ TOUT LE FOYER "LAMONTAGNE" avec Philippt LAMONTAGNE en client principal -->  persons=['0033O00000IHcKeQAL' , '0033O00000IHbtkQAD' , '0033O00000IHcKfQAL']</p>
+    <p>2/ UNIQUEMENT Philippe LAMONTAGE --> persons=['0033O00000IHcKeQAL']</p>
+<button onclick="sendparameters()">Envoi des parmètres</button>
+<br/>
+<iframe id="iframe" src="https://poc-frameout.cs129.force.com/testvisual" height="700" width="1400"></iframe>
 
-<iframe src="https://poc-frameout.cs129.force.com/testvisual" height="600" width="100%"></iframe>
+<script>
+     
+    var lexOrigin = '*';
+     
+    function sendparameters() {
+        var message = {
+            poste: "Poste",
+            persons: "['0033O00000IHcKeQAL', '0033O00000IHbtkQAD' , '0033O00000IHcKfQAL']"
+        };
+        console.log('postMessage to iframe');
+        iframe.contentWindow.postMessage(message, lexOrigin);
+    }
+     
+</script>
 
 </body>
 </html>
