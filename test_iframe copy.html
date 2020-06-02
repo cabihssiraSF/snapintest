@@ -7,7 +7,7 @@
 <p>Page publique, mais ajout d'un id de session en paramètre. LE message envoyé peut prendre n'importe quelle forme</p>
 <button onclick="sendparameters()">Envoi des parmètres</button>
 <br/>
-<iframe id="iframe" src="https://albiantit--poc.lightning.force.com/c/goccTimelineApp.app" height="600" width="100%"></iframe>
+<iframe id="iframe" src="https://albiantit--poc--c.visualforce.com/apex/goccTimelinePage" height="600" width="100%"></iframe>
 
 <script>
      
@@ -15,8 +15,6 @@
      
     function sendparameters() {
         var message = {
-        	session: "1vO3YeeIlejo7VELPzUYetJ3Ovvpl9AA7sLIQyUEvBM.0N8wJYFjJ-tNyMTROxq4lg",
-            site: "Etablissement",
             poste: "Poste",
             persons: "[Id1,Id2,Id3]"
         };
