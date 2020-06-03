@@ -96,6 +96,9 @@
       xhr.onerror = function() {
         alert('Woops, there was an error making the request.');
       };
+      
+      //Add header
+      xhr.setRequestHeader('Access-Control-Allow-Origin', urlcors);
 
       xhr.send();
     }
