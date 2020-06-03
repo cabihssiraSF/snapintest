@@ -11,10 +11,8 @@
   var _lightningReady = false;
   var poste = 'test';
   var persons = "['0033O00000IHcKeQAL']";
-  
-  // This is a sample server that supports CORS.
-  var urlcors = 'https://albiantit--poc.lightning.force.com';
-  makeCorsRequest(urlcors);
+
+  makeCorsRequest();
   createTimeline(poste,persons);
 
   function setupLightning(callback) {
@@ -78,9 +76,11 @@
     }
 
     // Make the actual CORS request.
-    function makeCorsRequest(url) {
+    function makeCorsRequest() {
+    // This is a sample server that supports CORS.
+    var urlcors = 'https://albiantit--poc.lightning.force.com';
 
-      var xhr = createCORSRequest('GET', url);
+      var xhr = createCORSRequest('GET', urlcors);
       if (!xhr) {
         alert('CORS not supported');
         return;
@@ -90,7 +90,7 @@
       xhr.onload = function() {
         var text = xhr.responseText;
         var title = getTitle(text);
-        alert('Response from CORS request to ' + url + ': ' + title);
+        alert('Response from CORS request to ' + urlcors + ': ' + title);
       };
 
       xhr.onerror = function() {
@@ -101,6 +101,7 @@
     }
      
 </script>
+
 
 </body>
 </html>
