@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<body>
+<script src="https://poc-frameout.cs129.force.com/s/lightning/lightning.out.js"></script>
+<h2>TEST page Authenticated direct call Lightningout</h2>
+<br/>
+<div id="gocctimeline" />
+
+<script type="text/javascript">
+  var _lightningReady = false;
+  var poste = 'test';
+  var persons = "['0033O00000IHcKeQAL']";
+  createTimeline(poste,persons);
+
+    function setupLightning(callback) {
+      var appName = "c:goccTimelineGlobal";
+       
+
+      if (_lightningReady) {
+        if (typeof callback === "function") {
+         // callback();
+        }
+      } else {
+          // Transform the URL for Lightning
+          var url = 'https://albiantit--poc.lightning.force.com';
+          var sid ='00D3O0000008jq1!AR0AQKPlxqeZ69KqJ7s5JYpAsn39832P4p6HrDoTj2M6z78y5IiM6.IbEaoqxk0OVx1dJ2IcaWTjEyxBfc_GSOri6pBO71Ws';
+
+          $Lightning.use(appName, 
+              function() {
+                _lightningReady = true;
+                document.getElementById("gocctimeline").style.display = "";
+                if (typeof callback === "function") {
+                 // callback();
+                }
+              }, url,sid);
+      }
+    }
+
+    function createTimeline(poste, persons) {
+        setupLightning(function() {
+          $Lightning.createComponent("c:goccTimelineGlobal", 
+                                    { poste : poste,
+                                      persons : persons },
+                                "gocctimeline",
+                                function(cmp) {
+                                    console.log("lwc component was created");
+                                    // do some stuff
+                                }
+                            );
+        });
+    }
+     
+</script>
+
+</body>
+</html>
