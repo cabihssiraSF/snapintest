@@ -98,7 +98,12 @@
       };
       
       //Add header
-      xhr.setRequestHeader('Access-Control-Allow-Origin', 'https://htmlpreview.github.io');
+      xhr.setRequestHeader('Access-Control-Allow-Origin', '*');
+      xhr.setRequestHeader('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version, X-Response-Time, X-PINGOTHER, X-CSRF-Token,Authorization,X-Authorization'); 
+      xhr.setRequestHeader('Access-Control-Allow-Methods', '*');
+      xhr.setRequestHeader('Access-Control-Expose-Headers', 'X-Api-Version, X-Request-Id, X-Response-Time');
+      xhr.setRequestHeader('Access-Control-Max-Age', '1000');
+
 
       xhr.send();
     }
