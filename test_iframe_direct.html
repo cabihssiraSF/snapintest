@@ -103,7 +103,7 @@
       xhr.setRequestHeader('Access-Control-Allow-Methods', '*');
       xhr.setRequestHeader('Access-Control-Expose-Headers', 'X-Api-Version, X-Request-Id, X-Response-Time');
       xhr.setRequestHeader('Access-Control-Max-Age', '1000');
-
+      xhr.mode = "no-cors";
 
       xhr.send();
     }
