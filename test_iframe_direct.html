@@ -94,7 +94,7 @@
       };
 
       xhr.onerror = function() {
-        alert('Woops, there was an error making the request.');
+        alert('Woops, there was an error making the request >>' + JSON.stringify(xhr));
       };
       
       //Add header
