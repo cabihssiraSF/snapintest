@@ -1,0 +1,64 @@
+﻿<!DOCTYPE html>
+<html>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1,IE=EmulateIE11" />
+<body onload="sendparameters()"  style="background-color: #333333; color:white;  background-image: url('images/CE_background_nsdk.png'); background-repeat: no-repeat;">
+<!--script src="https://poc-frameout.cs129.force.com/s/lightning/lightning.out.js"></script-->
+<h2>Simulation du Poste de travail CE</h2>
+
+  <table  style="position: absolute; max-width: 1018px; width:100%;  height: 66px; left: 260px; top: 129px; background-color: white; color:black;">
+    <tr>
+    <td style="width:50%">
+        <div style="font-family: Ubuntu;font-style: normal;font-weight: 500;font-size: 21px;line-height: 22px;">
+          Vue globale des contacts client
+        </div>
+          <div style="font-family: Ubuntu;font-style: normal;font-weight: normal;font-size: 16px;line-height: 22px; color: #DB0029">
+            Pers. 32938832 - Philippe LAMONTAGNE
+          </div>
+    </td>
+    <td  style="width:30%;">
+      <form name="form1">
+          <!--label for="fposte">Poste:</label>
+          <input type="text" id="fposte" name="fposte" value="TEST"><br><br-->
+        <div style="font-family: Ubuntu;font-style: normal;font-weight: normal;font-size: 16px;line-height: 22px; color:grey">
+          Membre de la relation
+        </div>
+          <select id="fpersons" name="fpersons" onchange="sendparameters()">
+            <option value="['0033O00000IHcKeQAL' , '0033O00000IHbtkQAD' , '0033O00000IHcKfQAL']">Toute la relation</option>
+            <option value="['0033O00000IHcKeQAL']">Philippe LAMONTAGNE</option>
+            <option value="['0033O00000IHbtkQAD']">Amandine LAMONTAGNE</option>
+            <option value="['0033O00000IHcKfQAL']">Grégory LAMONTAGNE</option>
+          </select>
+            <!--input style="width:600px;" type="text" id="persons" name="fpersons" value="['0033O00000IHcKeQAL' , '0033O00000IHbtkQAD' , '0033O00000IHcKfQAL']"-->
+      </form>
+    <!--button onclick="sendparameters()">Envoi des paramètres</button-->
+    </td>
+  </tr>
+</table>
+<iframe id="iframe" src="https://poc-frameout.cs129.force.com/testvisual" 
+        frameborder="0" style="overflow: hidden; max-height:598px; max-width: 1018px; height:100%; width:100%; position: absolute; left: 260px; top: 195px;"></iframe>
+
+<script type="text/javascript">
+     
+    var lexOrigin = '*';
+     
+    function sendparameters() {
+        var fposte = 'test'; //document.form1.fposte.value;
+        var fpersonsSelect = document.form1.fpersons;
+        var fpersons = fpersonsSelect.options[fpersonsSelect.selectedIndex].value;
+
+        var message = {
+            poste: fposte,
+            persons: fpersons,
+            banque: 'CE',
+            height: 598
+        };
+		//var x = iframe.contentWindow;
+		//x.postMessage(message, lexOrigin);
+		var xIE11 = document.getElementsByTagName("iframe")[0].contentWindow;
+        xIE11.postMessage(message, lexOrigin);
+    }
+     
+</script>
+
+</body>
+</html>
