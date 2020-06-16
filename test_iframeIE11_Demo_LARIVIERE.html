@@ -41,14 +41,14 @@
     var lexOrigin = '*';
      
     function sendparameters() {
-        var fposte = 'test'; //document.form1.fposte.value;
         var fpersonsSelect = document.form1.fpersons;
         var fpersons = fpersonsSelect.options[fpersonsSelect.selectedIndex].value;
 
         var message = {
-            poste: fposte,
+            site: 'etab',
+            role: 'poste',
             persons: fpersons,
-            height: 575
+            frameh: 575
         };
 		//var x = iframe.contentWindow;
 		//x.postMessage(message, lexOrigin);
