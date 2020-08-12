@@ -3,9 +3,9 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1,IE=EmulateIE11" />
 <body onload="sendparameters()"  style="background-color: #333333; color:white;  background-image: url('https://albiantit--poc--c.documentforce.com/servlet/servlet.ImageServer?id=0153O000000FzmU&oid=00D3O0000008jq1'); background-repeat: no-repeat;">
 
-  <table  style="position: absolute; max-width: 1018px; width:100%;  height: 66px; left: 260px; top: 129px; background-color: white; color:black;">
-    <tr>
-    <td style="width:50%">
+  <table  style="position: absolute; max-width: 1018px; width:100%;  height: 65px; left: 260px; top: 129px; background-color: white; color:black; border-collapse: collapse;">
+    <tr style="border-bottom:1pt solid black;">
+    <td style="width:100%">
         <div style="font-family: Ubuntu;font-style: normal;font-weight: 500;font-size: 21px;line-height: 22px;">
           Vue globale des contacts client
         </div>
@@ -13,10 +13,8 @@
             Pers. 32938832 - Philippe LAMONTAGNE
           </div>
     </td>
-    <td  style="width:30%;">
+    <!--td  style="width:30%;">
       <form name="form1">
-          <!--label for="fposte">Poste:</label>
-          <input type="text" id="fposte" name="fposte" value="TEST"><br><br-->
         <div style="font-family: Ubuntu;font-style: normal;font-weight: normal;font-size: 16px;line-height: 22px; color:grey">
           Membre de la relation
         </div>
@@ -27,28 +25,29 @@
             <option value="['0033O00000IHbtkQAD']">Amandine LAMONTAGNE</option>
             <option value="['0033O00000IHcKfQAL']">Grégory LAMONTAGNE</option>
           </select>
-            <!--input style="width:600px;" type="text" id="persons" name="fpersons" value="['0033O00000IHcKeQAL' , '0033O00000IHbtkQAD' , '0033O00000IHcKfQAL']"-->
       </form>
-    <!--button onclick="sendparameters()">Envoi des paramètres</button-->
-    </td>
+    </td-->
   </tr>
 </table>
 <iframe id="iframe" src="https://poc-frameout.cs129.force.com/testvisual" 
-        frameborder="0" style="overflow: hidden; max-height:598px; max-width: 1018px; height:100%; width:100%; position: absolute; left: 260px; top: 195px;"></iframe>
+        frameborder="0" style="overflow: hidden; max-height:598px; max-width: 1018px; height:100%; width:100%; position: absolute; left: 260px; top: 194px;"></iframe>
 
 <script type="text/javascript">
      
     var lexOrigin = '*';
      
     function sendparameters() {
-        var fpersonsSelect = document.form1.fpersons;
-        var fpersons = fpersonsSelect.options[fpersonsSelect.selectedIndex].value;
+       // var fpersonsSelect = document.form1.fpersons;
+       // var fpersons = fpersonsSelect.options[fpersonsSelect.selectedIndex].value;
+
+        var fpersons = "['0033O00000IHcKeQAL' , '0033O00000K8EwwQAF', '0033O00000IHbtkQAD' , '0033O00000IHcKfQAL']";
 
         var message = {
             site: 'etab',
             role: 'poste',
             persons: fpersons,
             chart: 'CE',
+            combo: 1,
             frameh: 598
         };
 		//var x = iframe.contentWindow;
