@@ -14,11 +14,10 @@
           <div style="font-family: Ubuntu;font-style: normal;font-weight: normal;font-size: 16px;line-height: 22px; color: #DB0029">
             Pers. 32938832 - Philippe LAMONTAGNE
           </div>
+        <div style="border-bottom:1pt solid black;"></div>
     </td>
-    <td  style="width:30%;">
+    <!--td  style="width:30%;">
       <form name="form1">
-          <!--label for="fposte">Poste:</label>
-          <input type="text" id="fposte" name="fposte" value="TEST"><br><br-->
         <div style="font-family: Ubuntu;font-style: normal;font-weight: normal;font-size: 16px;line-height: 22px; color:grey">
           Membre de la relation
         </div>
@@ -29,14 +28,12 @@
             <option value="['0033O00000IHbtkQAD']">Amandine LAMONTAGNE</option>
             <option value="['0033O00000IHcKfQAL']">Grégory LAMONTAGNE</option>
           </select>
-            <!--input style="width:600px;" type="text" id="persons" name="fpersons" value="['0033O00000IHcKeQAL' , '0033O00000IHbtkQAD' , '0033O00000IHcKfQAL']"-->
       </form>
-    <!--button onclick="sendparameters()">Envoi des paramètres</button-->
-    </td>
+    </td-->
   </tr>
 </table>
 <iframe id="iframe" src="https://poc-frameout.cs129.force.com/testvisual" 
-        frameborder="0" style="overflow: hidden; max-height:575px; max-width: 1082px; height:100%; width:100%; position: absolute; left: 197px; top: 189px;"></iframe>
+        frameborder="0" style="overflow: hidden; max-height:681px; max-width: 1082px; height:100%; width:100%; position: absolute; left: 197px; top: 189px;"></iframe>
 
 <script type="text/javascript">
      
@@ -44,15 +41,18 @@
      
     function sendparameters() {
         var fposte = 'test'; //document.form1.fposte.value;
-        var fpersonsSelect = document.form1.fpersons;
-        var fpersons = fpersonsSelect.options[fpersonsSelect.selectedIndex].value;
+       // var fpersonsSelect = document.form1.fpersons;
+       // var fpersons = fpersonsSelect.options[fpersonsSelect.selectedIndex].value;
+
+        var fpersons = "['0033O00000IHcKeQAL' , '0033O00000K8EwwQAF', '0033O00000IHbtkQAD' , '0033O00000IHcKfQAL']"
 
         var message = {
             site: 'etab',
             role: 'poste',
             persons: fpersons,
             chart: 'CE',
-            frameh: 575
+            combo: 1,
+            frameh: 681 //frameh: 575
         };
 		//var x = iframe.contentWindow;
 		//x.postMessage(message, lexOrigin);
