@@ -1,25 +1,14 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1,IE=EmulateIE11" />
-<body onload="sendparameters()"  style="background-color: #581D74; color:white;">
-<!--script src="https://poc-frameout.cs129.force.com/s/lightning/lightning.out.js"></script-->
-<h2>Simulation du Poste de travail</h2>
+<!--body onload="sendparameters()"  style="background-color: #051B71; color:white;"-->
+<body onload="sendparameters()" style="background-color: #051B71; background-image: url('https://albiantit--poc--c.documentforce.com/servlet/servlet.ImageServer?id=0153O000000Fzok&oid=00D3O0000008jq1'); background-repeat: no-repeat;">
 
-  <table  style="position: absolute;  max-width: 1082px; width:100%;  height: 74px; left: 197px; top: 125px; background-color: white; color:black;">
-    <tr>
-    <td style="width:50%">
-        <div style="font-family: Ubuntu;font-style: normal;font-weight: 500;font-size: 21px;line-height: 22px;">
-          Vue globale des contacts client
-        </div>
-          <div style="font-family: Ubuntu;font-style: normal;font-weight: normal;font-size: 16px;line-height: 22px; color: #581D74">
-            Pers. 54307403 - Jean LARIVIERE
-          </div>
-    </td>
-    <td  style="width:30%;">
+<div  style="position: absolute; left: 470px; top: 216px;">
       <form name="form1">
           <!--label for="fposte">Poste:</label>
           <input type="text" id="fposte" name="fposte" value="TEST"><br><br-->
-          <label for="fpersons">Persons:</label>
+          <label for="fpersons"> </label>
           <select id="fpersons" name="fpersons" onchange="sendparameters()">
             <option selected value="['0033O00000IyXgRQAV']">M. LARIVIERE Jean</option>
             <option value="['0033O00000OqY2wQAF']">M. LARIVIERE Jean - PRO</option>
@@ -31,18 +20,16 @@
           </select>
             <!--input style="width:600px;" type="text" id="persons" name="fpersons" value="['0033O00000IHcKeQAL' , '0033O00000IHbtkQAD' , '0033O00000IHcKfQAL']"-->
       </form>
-    <!--button onclick="sendparameters()">Envoi des paramètres</button-->
-    </td>
-  </tr>
-</table>
+</div>
 <iframe id="iframe" src="https://poc-frameout.cs129.force.com/testvisual" 
-        frameborder="0" style="overflow: hidden;  max-height:575px; max-width: 1082px; height:100%; width:100%; position: absolute; left: 197px; top: 189px;"></iframe>
+        frameborder="0" style="overflow: hidden; height:517px; width: 1023px; position: absolute; left: 255px; top: 235px;"></iframe>
 
 <script type="text/javascript">
      
     var lexOrigin = '*';
      
     function sendparameters() {
+        var fposte = 'test'; //document.form1.fposte.value;
         var fpersonsSelect = document.form1.fpersons;
         var fpersons = fpersonsSelect.options[fpersonsSelect.selectedIndex].value;
 
@@ -50,7 +37,8 @@
             site: 'etab',
             role: 'poste',
             persons: fpersons,
-            frameh: 575
+            chart: 'BP',
+            frameh: 517
         };
 		//var x = iframe.contentWindow;
 		//x.postMessage(message, lexOrigin);
